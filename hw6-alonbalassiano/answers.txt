@@ -1,0 +1,6 @@
+push - if o == null then executing top() after pushing would cause an infinite loop 
+       (and the invariant will not be true because the elements.size() >= 1 thus !isEmpty(), but top() can never return null). 
+       therefore we should add @pre o != null
+pop - correct
+top - correct
+isEmpty - isEmpty returns true for an empty list. the correct one is: @post @return == true iff elements.size() == 0
